@@ -11,21 +11,23 @@
     <div class="container">
         <h1>Rock Paper Scissors</h1>
         <div class="icons">
-            <button>
+            <button onclick="Userchoice('rock')">
                 <img src="/rock.jpg" alt="">
                 <p>Rock</p>
             </button>
-            <button>
+            <button onclick="Userchoice('paper')">
                 <img src="/paper.jpg" alt="">
                 <p>Paper</p>
             </button>
-            <button>
+            <button onclick="Userchoice('scissors')">
                 <img src="/scissors.jpg" alt="">
                 <p>Scissors</p>
             </button>
         </div>
-        <h4>Select Your Choice</h4>
-        <button class="game">Start Game</button>
+        <input type="text" id="inp">
+        <button class="game" 
+        onclick="StartGame()"
+        >Start Game</button>
         <p>Result</p>
     </div>
     
