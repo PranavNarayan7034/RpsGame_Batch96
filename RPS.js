@@ -3,34 +3,67 @@
 var i = document.getElementById('inp')
 let userSeletion;
 let computerSelection;
+let x = document.getElementById('result')
+let us = document.getElementById('us')
+let cs = document.getElementById('cs')
+
 function Userchoice(choice) {
     userSeletion = choice
     i.value = choice
 }
 
 let c = ['rock', 'paper', 'scissors']
+let comp_score = 0
+let user_score = 0
 function StartGame() {
     let r = Math.floor(Math.random() * 3)
     computerSelection = c[r]
-    console.log("usr slcg==",userSeletion)
-    console.log("com slcg==",computerSelection)
+    us.textContent = `User Selection: ${userSeletion}`
+    cs.textContent = `Computer Selection: ${computerSelection}`
 
     if (userSeletion == 'rock') {
         if (computerSelection == 'rock') {
-            console.log("Tie")
+            x.textContent = 'Tie'
         }
         else if (computerSelection == 'paper') {
-            console.log("Computer Won")
+            x.textContent = 'Computer Won'
+            comp_score += 1
         }
         else {
-            console.log("You Won")
+            x.textContent = 'You Won'
+            user_score += 1
         }
     }
     
-    else if (userSeletion == 'paper') { }
+    else if (userSeletion == 'paper') {
+        if (computerSelection == 'rock') {
+            x.textContent = 'You won'
+            user_score += 1
+        }
+        else if (computerSelection == 'paper') {
+            x.textContent = 'Tie'
+        }
+        else {
+            x.textContent = 'Computer Won'
+            comp_score += 1
+        }
+    }
     
-    else if (userSeletion == 'scissors') { }
-    
+    else if (userSeletion == 'scissors') {
+        if (computerSelection == 'rock') { 
+            x.textContent = 'Computer Won'
+            comp_score += 1
+        }
+        else if (computerSelection == 'paper') {
+            x.textContent = 'You won'
+            user_score += 1
+        }
+        else {
+            x.textContent = 'Tie'
+        }
+    }
+    console.log("com.score=", comp_score)
+    console.log('user score=',user_score)
 }
 
 
@@ -121,3 +154,37 @@ function StartGame() {
 // else {
 //     console.log("Exit")
 // }
+
+
+
+
+
+// let count = 15 
+// function myfn() {
+//     count += 1;
+//     console.log(count)
+// }
+// myfn()
+// myfn()
+// myfn()
+// myfn()
+
+
+// function myfn1() {
+//     let count = 20;
+//     count += 1
+//     console.log(count)
+// }
+
+// myfn1()
+// myfn1()
+
+
+// let mark = 10
+// function myfn2() {
+//     let mark = 20 
+//     mark += 5 
+//     console.log(mark)
+// }
+// console.log(mark)
+// myfn2()
